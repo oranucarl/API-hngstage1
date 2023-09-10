@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 8888; // Use the PORT environment variable provided by Render
+const port = process.env.PORT || 8880; // Use the PORT environment variable provided by Render
 
 app.get('/api', (req, res) => {
   const slackName = req.query.slack_name;
@@ -12,7 +12,7 @@ app.get('/api', (req, res) => {
   const currentDay = daysOfWeek[currentDate.getUTCDay()];
 
   // Get the current UTC time with validation of +/-2 minutes
-  const currentUtcTime = new Date().toISOString();
+  const currentUtcTime = new Date(Date.now()).toISOString().split(".")[0];
 
   // Construct the JSON response
   const jsonResponse = {
