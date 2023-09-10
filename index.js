@@ -7,9 +7,9 @@ const HOST = 'localhost'
 const PORT = 8888
 
 
-api.get('/', (req,res) => {
-    res.send('Welcome to this my API!')
-})
+//api.get('/', (req,res) => {
+//res.send('Welcome to this my API!')
+//})
 
 api.get('/api', (req,res) => {
     res.status(200).json(data)
