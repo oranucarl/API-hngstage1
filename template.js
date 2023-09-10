@@ -7,8 +7,8 @@ const currentDay = moment().format('dddd');
 const currentTime = moment().utc().format();
 
 // Get the GitHub file URL and GitHub repo URL
-const githubFileUrl = 'https://github.com/username/repo/blob/main/file_name.ext';
-const githubRepoUrl = 'https://github.com/username/repo';
+const githubFileUrl = 'https://github.com/oranucarl/API-hngstage1/blob/main/README.md';
+const githubRepoUrl = 'https://github.com/oranucarl/API-hngstage1.git';
 
 module.exports = {   
         slack_name: 'Carlson',
