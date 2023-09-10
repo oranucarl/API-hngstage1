@@ -11,7 +11,7 @@ const PORT = 8888
 //res.send('Welcome to this my API!')
 //})
 
-api.get('/api', (req,res) => {
+api.get('/p', (req,res) => {
     res.status(200).json(data)
 })
 
