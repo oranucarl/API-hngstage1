@@ -1,19 +1,33 @@
-const express = require('express')
-const data = require('./template')
+const express = require('express');
+const app = express();
+const port = process.env.PORT || 8888; // Use the PORT environment variable provided by Render
 
-const api = express()
+app.get('/api', (req, res) => {
+  const slackName = req.query.slack_name;
+  const track = req.query.track;
 
-const HOST = 'localhost'
-const PORT = 8888
+  // Get the current day of the week
+  const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  const currentDate = new Date();
+  const currentDay = daysOfWeek[currentDate.getUTCDay()];
 
+  // Get the current UTC time with validation of +/-2 minutes
+  const currentUtcTime = new Date().toISOString();
 
-//api.get('/', (req,res) => {
-//res.send('Welcome to this my API!')
-//})
+  // Construct the JSON response
+  const jsonResponse = {
+    slack_name: slackName,
+    current_day: currentDay,
+    utc_time: currentUtcTime,
+    track: track,
+    github_file_url: 'https://github.com/oranucarl/API-hngstage1/blob/main/index.js',
+    github_repo_url: 'https://github.com/oranucarl/API-hngstage1.git',
+    status_code: 200,
+  };
 
-api.get('/', (req,res) => {
-    res.status(200).json(data)
-})
+  res.json(jsonResponse);
+});
 
-
-api.listen(PORT, () => console.log(`API running at ${HOST}:${PORT}!`))
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
