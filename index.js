@@ -11,7 +11,7 @@ api.get('/', (req,res) => {
     res.send('Welcome to this my API!')
 })
 
-api.get('/people', (req,res) => {
+api.get('/api', (req,res) => {
     res.status(200).json(data)
 })
 

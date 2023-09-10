@@ -7,7 +7,7 @@ const currentDay = moment().format('dddd');
 const currentTime = moment().utc().format();
 
 // Get the GitHub file URL and GitHub repo URL
-const githubFileUrl = 'https://github.com/oranucarl/API-hngstage1/blob/main/README.md';
+const githubFileUrl = 'https://github.com/oranucarl/API-hngstage1/blob/main/index.js';
 const githubRepoUrl = 'https://github.com/oranucarl/API-hngstage1.git';
 
 module.exports = {   
