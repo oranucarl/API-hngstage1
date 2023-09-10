@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 8888; // Use the PORT environment variable provided by Render
 
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
   const slackName = req.query.slack_name;
   const track = req.query.track;
 
